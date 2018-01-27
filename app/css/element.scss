@@ -1,0 +1,35 @@
+@import "./layout.scss";
+
+// 按钮混合
+@mixin btn($size:14px,$color:#fff,$bgcolor:#f04752,$padding:5px,$radius:5px){
+  padding: $padding;
+  background-color: $bgcolor;
+  border: 1px solid $bgcolor;
+  border-radius: $radius;
+  font-size: $size;
+  color: $color;
+  line-height: 1;
+  display: inline-block;
+}
+// 列表混合,继承了布局样式
+@mixin list($direction:colum) {
+  @include flex($direction);
+}
+
+// 面板混合
+@mixin panel($bgcolor:#fff,$padding:0,$margin:20px 0,$height:112px,$txtPadding:0 32px,$color:#333,$fontSize:32px) {
+  background: $bgcolor;
+  padding: $padding;
+  margin: $margin;
+  >h4{
+    height: $height;
+    line-height: $height;
+    padding-block-end: $txtPadding;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    color: $bgcolor;
+    font-size: $fontSize;
+  }
+}
